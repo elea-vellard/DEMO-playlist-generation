@@ -44,7 +44,7 @@ Three models are supported:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/playlist-demo.git
+git@github.com:elea-vellard/DEMO-playlist-continuation.git
 cd playlist-demo
 ```
 
