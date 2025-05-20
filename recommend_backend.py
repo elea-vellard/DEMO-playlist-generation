@@ -26,15 +26,15 @@ MODEL_CONFIGS = {
         "pretrained": True,
         "base_model_name": "sentence-transformers/all-MiniLM-L6-v2",
         "embeddings_file": "./playlist_continuation/playlists_embeddings/final_embeddings/playlists_embeddings_pretrained.pkl"
-    },
-    "2": {
-        "model_dir": "./playlist_continuation/fine_tuned_model_no_scheduler_2",
-        "embeddings_file": "./playlist_continuation/playlists_embeddings/final_embeddings/playlists_embeddings_scheduler.pkl"
-    },
-    "3": {
-        "model_dir": "./playlist_continuation/final_triplet_model",
-        "embeddings_file": "./playlist_continuation/playlists_embeddings/final_embeddings/playlists_embeddings_triplet.pkl"
-    }
+    }#,
+    #"2": {
+    #    "model_dir": "./playlist_continuation/fine_tuned_model_no_scheduler_2",
+    #    "embeddings_file": "./playlist_continuation/playlists_embeddings/final_embeddings/playlists_embeddings_scheduler.pkl"
+    #},
+    #"3": {
+    #    "model_dir": "./playlist_continuation/final_triplet_model",
+    #    "embeddings_file": "./playlist_continuation/playlists_embeddings/final_embeddings/playlists_embeddings_triplet.pkl"
+    #}
 }
 
 # Cache loaded models
@@ -148,7 +148,7 @@ def recommend():
     return jsonify(response)
 
 print("Preloading all models for fast first request...")
-for model_id in ["1", "2", "3"]:
+for model_id in ["1"]#, "2", "3"]:
     print(f"Loading model {model_id}...")
     load_model(model_id)
 print("All models preloaded and ready!")
