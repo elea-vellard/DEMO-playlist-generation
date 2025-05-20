@@ -31,7 +31,7 @@ This project is a demonstration system for generating music playlists based on a
 
 ```bash
 git@github.com:elea-vellard/DEMO-playlist-continuation.git
-cd playlist-demo
+cd DEMO-playlist-continuation
 ```
 
 ### 2. Download required files
