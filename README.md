@@ -4,18 +4,6 @@ This project is a demonstration system for generating music playlists based on a
 
 ---
 
-## 🧠 Overview
-
-The system encodes the input playlist name into a vector using a transformer model, compares it to precomputed embeddings of existing playlists, and returns the most frequently occurring tracks from the most similar ones.
-
-Three models are supported:
-
-- **Model 1**: Pretrained MiniLM (`sentence-transformers/all-MiniLM-L6-v2`)
-- **Model 2**: Fine-tuned with Cross-Entropy loss
-- **Model 3**: Fine-tuned with Triplet Loss
-
----
-
 ## 📁 Repository Structure
 
 ```
@@ -24,8 +12,7 @@ Three models are supported:
 ├── Dockerfile                   # Docker container configuration
 ├── requirements.txt             # Python dependencies
 ├── index.html                   # Web interface (static)
-├── playlist_continuation/      # (expected path for models and embeddings)
-└── data/csvs/                   # (expected path for metadata files)
+└── data/                        # (expected path for metadata files)
 ```
 
 ---
@@ -35,7 +22,6 @@ Three models are supported:
 - Docker installed locally
 - At least **9 GB of RAM**
 - No GPU required (runs on CPU)
-- Internet browser to open the frontend (`index.html`)
 
 ---
 
@@ -50,21 +36,21 @@ cd playlist-demo
 
 ### 2. Download required files
 
-The following files are **not included** in the repository and must be manually added:
+The following files are **not included** in the repository and must be manually added in the /data folder:
 
 - Fine-tuned model directories:
-  - `playlist_continuation/fine_tuned_model_no_scheduler_2/`
-  - `playlist_continuation/final_triplet_model/`
+  - `data/fine_tuned_model_no_scheduler_2/`
+  - `data/final_triplet_model/`
 
 - Precomputed embeddings:
-  - `playlist_continuation/playlists_embeddings/final_embeddings/playlists_embeddings_scheduler.pkl`
-  - `playlist_continuation/playlists_embeddings/final_embeddings/playlists_embeddings_triplet.pkl`
-  - `playlist_continuation/playlists_embeddings/final_embeddings/playlists_embeddings_pretrained.pkl`
+  - `data/playlists_embeddings_scheduler.pkl`
+  - `data/playlists_embeddings_triplet.pkl`
+  - `data/playlists_embeddings_pretrained.pkl`
 
 - Metadata files:
-  - `data/csvs/tracks.csv`
-  - `data/csvs/items.csv`
-  - `data/csvs/playlists.csv`
+  - `data/tracks.csv`
+  - `data/items.csv`
+  - `data/playlists.csv`
 
 Once downloaded, place them as follows:
 
