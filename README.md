@@ -51,34 +51,11 @@ The following files are **not included** in the repository and must be manually 
   - `data/tracks.csv`
   - `data/items.csv`
   - `data/playlists.csv`
-
-Once downloaded, place them as follows:
-
-```
-playlist_continuation/
-├── fine_tuned_model_no_scheduler_2/
-├── final_triplet_model/
-└── playlists_embeddings/
-    └── final_embeddings/
-        ├── playlists_embeddings_scheduler.pkl
-        ├── playlists_embeddings_triplet.pkl
-        └── playlists_embeddings_pretrained.pkl
-
-data/csvs/
-├── tracks.csv
-├── items.csv
-├── playlists.csv
-```
-
 ---
 
 ## 🐳 Running the Demo (Docker)
 
-### Step-by-step:
-
-1. Open a terminal and go to the root of the project.
-2. Make sure the folders `playlist_continuation/` and `data/csvs/` contain the required files.
-3. Build the Docker image:
+1. Build the Docker image:
 
 ```bash
 docker build -t playlist-recommendation .
@@ -93,7 +70,7 @@ docker run -p 8080:8080 \
   playlist-recommendation
 ```
 
-5. Keep this terminal open — the backend Flask server is now running on http://localhost:8080.
+3. Keep this terminal open — the backend Flask server is now running on http://localhost:8080.
 
 ---
 
