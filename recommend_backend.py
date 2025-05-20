@@ -16,9 +16,9 @@ app = Flask(__name__)
 print("Loading static data (track metadata)...")
 
 # Static paths
-ITEMS_CSV = "./csvs/items.csv"
-TRACKS_CSV = "./csvs/tracks.csv"
-PLAYLISTS_CSV = "./csvs/playlists.csv"
+ITEMS_CSV = "./data/items.csv"
+TRACKS_CSV = "./data/tracks.csv"
+PLAYLISTS_CSV = "./data/playlists.csv"
 
 # Models paths + pretrained config
 MODEL_CONFIGS = {
