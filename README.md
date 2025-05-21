@@ -58,7 +58,9 @@ The following files are **not included** in the repository and must be manually 
 1. Build the Docker image:
 
 ```bash
-docker build -t playlist-recommendation .
+docker build -t playlist-recommendation .???
+docker pull eleadocker/playlist-recommendation:latest
+
 ```
 
 4. Run the container:
