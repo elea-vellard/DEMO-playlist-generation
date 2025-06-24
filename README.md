@@ -1,125 +1,23 @@
 # Playlist Recommendation Demo
 
-This project is a demonstration system for generating music playlists based on a user-provided playlist name. It uses transformer-based language models to find similar playlists and recommend the most relevant tracks. The demo includes a backend API (Flask + Docker) and a web interface for interacting with the system.
+This project is a demo application that recommends songs based on a user-provided playlist title.  
+It uses a fine-tuned transformer model trained on the Million Playlist Dataset to generate real-time suggestions that match the theme of the input.
+
+The system is fully packaged in a Docker image and includes:
+- A Flask backend API
+- A clean, interactive web interface
+- Preloaded data, embeddings, and model (no extra setup required)
 
 ---
 
-## 📁 Repository Structure
+## Run the demo locally
 
-```
-.
-├── recommend_backend.py         # Flask backend server
-├── Dockerfile                   # Docker container configuration
-├── requirements.txt             # Python dependencies
-├── index.html                   # Web interface (static)
-└── data/                        # (expected path for metadata files)
-```
-
----
-
-## ⚙️ Requirements
-
-- Docker installed locally
-- At least **9 GB of RAM**
-- No GPU required (runs on CPU)
-
----
-
-## 📦 Setup Instructions
-
-### 1. Clone the repository
-
+### 1. Pull the image
 ```bash
-git@github.com:elea-vellard/DEMO-playlist-continuation.git
-cd DEMO-playlist-continuation
-```
-
-### 2. Download required files
-
-The following files are **not included** in the repository and must be manually added in the /data folder:
-
-- Fine-tuned model directories:
-  - `data/fine_tuned_model_no_scheduler_2/`
-  - `data/final_triplet_model/`
-
-- Precomputed embeddings:
-  - `data/playlists_embeddings_scheduler.pkl`
-  - `data/playlists_embeddings_triplet.pkl`
-  - `data/playlists_embeddings_pretrained.pkl`
-
-- Metadata files:
-  - `data/tracks.csv`
-  - `data/items.csv`
-  - `data/playlists.csv`
----
-
-## 🐳 Running the Demo (Docker)
-
-1. Build the Docker image:
-
-```bash
-docker build -t playlist-recommendation .???
 docker pull eleadocker/playlist-recommendation:latest
-
 ```
 
-4. Run the container:
-
+### 2. Run the container
 ```bash
-docker run -p 8080:8080 \
-  -v $(pwd)/playlist_continuation:/app/playlist_continuation \
-  -v $(pwd)/data/csvs:/app/csvs \
-  playlist-recommendation
+docker run --rm -p 8080:8080 eleadocker/playlist-recommendation:latest
 ```
-
-3. Keep this terminal open — the backend Flask server is now running on http://localhost:8080.
-
----
-
-## 🌐 Using the Web Interface
-
-1. Open the `index.html` file in your browser.
-2. Select a model, enter a playlist name, and press Enter.
-3. The page will send an HTTP request to the backend and display the recommended tracks.
-
-> The interface dynamically communicates with the backend via JavaScript.
-
----
-
-## 🔌 API Reference (for developers)
-
-**Endpoint:**
-
-```
-GET /recommend?playlist_name=<name>&model_id=<1|2|3>
-```
-
-**Response:**
-
-```json
-{
-  "model_id": "2",
-  "recommendations": [
-    {"song": "Song A", "artist": "Artist A", "count": 5},
-    {"song": "Song B", "artist": "Artist B", "count": 4}
-  ]
-}
-```
-
----
-
-## 🖥️ System Requirements
-
-- RAM: ~9 GB
-- GPU: Not required
-- Docker: Required
-
----
-
-## 📬 Contact
-
-For access to the data files or further assistance, contact:
-
-**Éléa Vellard**  
-EURECOM  
-[youremail@domain.com]
