@@ -1,7 +1,0 @@
-flask
-torch
-scikit-learn
-tqdm
-transformers
-gensim
-numpy
