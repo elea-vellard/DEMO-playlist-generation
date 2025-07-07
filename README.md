@@ -12,6 +12,8 @@ The system is fully packaged in a Docker image and includes:
 
 ## Run the demo locally
 
+First, apply `transform-dataset/json2csv.py` on the [Million Playlist Dataset](https://www.kaggle.com/datasets/himanshuwagh/spotify-million) for populating the folder `app/data/`.
+
 ### 1. Pull the image
 ```bash
 docker pull eleadocker/playlist-recommendation:latest
