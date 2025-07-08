@@ -12,7 +12,9 @@ The system is fully packaged in a Docker image and includes:
 
 ## Run the demo locally
 
-First, apply `transform-dataset/json2csv.py` on the [Million Playlist Dataset](https://www.kaggle.com/datasets/himanshuwagh/spotify-million) for populating the folder `app/data/`.
+First, populate the `app/data/` directory:
+- apply `transform-dataset/json2csv.py` on the [Million Playlist Dataset](https://www.kaggle.com/datasets/himanshuwagh/spotify-million) and put the three obtained csv in the directory;
+- download the model in the [Zenodo repository](https://zenodo.org/records/15837980) and uncompress in the directory.
 
 ### 1. Pull the image
 ```bash
